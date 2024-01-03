@@ -1,0 +1,58 @@
+<!-- <p>login works!</p> -->
+<div
+  class="login-wrap min-vh-100 d-flex justify-content-center align-items-center"
+>
+  <c-card class="cardWrap">
+    <c-card-body>
+      <h3 cCardTitle>LOGIN</h3>
+      <h4 cCardSubtitle class="mb-2 text-medium-emphasis">Đăng nhập nhé!!!</h4>
+      <p cCardText>
+        Sản phẩm của Phạm Xuân Quân. Có lỗi là chuyện bình thường
+      </p>
+
+      <form cForm>
+        <div class="mb-3">
+          <c-input-group class="mb-3">
+            <span cInputGroupText>
+              <svg [cIcon]="icons.cilUser" size="xl" title="User"></svg>
+            </span>
+            <input cFormControl placeholder="Username" />
+          </c-input-group>
+        </div>
+        <div class="mb-3">
+          <c-input-group class="mb-3">
+            <span cInputGroupText>
+              <svg [cIcon]="icons.cilLockLocked" size="xl" title="Lock"></svg>
+            </span>
+            <input cFormControl type="password" placeholder="Password" />
+          </c-input-group>
+        </div>
+        <!-- <c-form-check class="mb-3">
+          <input cFormCheckInput id="checkMeOut-1" type="checkbox" />
+          <label cFormCheckLabel for="checkMeOut-1">Check me out</label>
+        </c-form-check> -->
+        <div class="d-flex justify-content-between">
+          <button cButton color="link">Quên mật khẩu?</button>
+          <button cButton color="primary" type="submit">Login</button>
+        </div>
+        <div class="d-flex justify-content-end mt-3">
+          <button
+            cButton
+            class="custom-btn-register"
+            cTooltip="Click here!!!
+            Nếu bạn không có tài khoản thì đăng ký đi!!!"
+            cTooltipPlacement="bottom"
+            variant="ghost"
+          >
+            <svg
+              [cIcon]="icons.cilCommentBubble"
+              size="xl"
+              class="custom-noti-register"
+              title="cilCommentBubble"
+            ></svg>
+          </button>
+        </div>
+      </form>
+    </c-card-body>
+  </c-card>
+</div>

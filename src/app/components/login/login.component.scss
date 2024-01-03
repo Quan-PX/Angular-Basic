@@ -1,0 +1,19 @@
+.login-wrap {
+  --cui-bg-opacity: 1;
+  background-color: rgba(var(--cui-light-rgb), var(--cui-bg-opacity));
+}
+
+.cardWrap {
+  max-width: 576px;
+}
+
+.custom-btn-register {
+  --bs-btn-border-color: none;  
+}
+
+.custom-noti-register {
+  color: #ccc;
+  :hover {
+    color: #3ac0db !important;
+  }
+}

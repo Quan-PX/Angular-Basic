@@ -1,0 +1,38 @@
+<div
+  class="pageErr-wrap min-vh-100 d-flex justify-content-center align-items-center"
+>
+  <c-container>
+    <c-row class="justify-content-center">
+      <c-col md="5" class="my-auto">
+        <div class="clearfix">
+          <h1 className="float-start display-3 me-4">500</h1>
+          <h4 className="pt-3">Oops! Something went wrong.</h4>
+          <h6>Our developers are working on this.</h6>
+          <p className="text-medium-emphasis float-start">
+            An uncaught error occurs. Please contact the administrator.
+          </p>
+        </div>
+
+        <c-input-group class="mb-3">
+          <span cInputGroupText>
+            <svg
+              [cIcon]="icons.cilMagnifyingGlass"
+              size="xl"
+              title="Lock"
+            ></svg>
+          </span>
+          <input cFormControl type="" placeholder="What are you looking for?" />
+          <button cButton>Search</button>
+        </c-input-group>
+      </c-col>
+      <c-col md="7">
+        <img
+          cImg
+          fluid
+          src="/src/assets/images/500.png"
+          alt="Something went wrong"
+        />
+      </c-col>
+    </c-row>
+  </c-container>
+</div>

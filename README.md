@@ -25,3 +25,7 @@ Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To u
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+
+
+<!-- // Tạo module - ng generate component login -->
+<!-- // Fix lỗi vãi cứt ----- Nếu version bị conflix ==>> ng update ở git. Check từng cái 1 và update lên VD: ng update @angular/cdk@12 --allow-dirty --force -->

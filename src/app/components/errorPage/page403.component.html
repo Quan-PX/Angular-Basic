@@ -1,0 +1,28 @@
+<div
+  class="pageErr-wrap min-vh-100 d-flex justify-content-center align-items-center"
+>
+  <c-container>
+    <c-row class="justify-content-center">
+      <c-col md="5" class="my-auto">
+        <div class="clearfix">
+          <h1 className="float-start display-3 me-4">403</h1>
+          <h4 className="pt-3">Oops! You're not authorized.</h4>
+          <p className="text-medium-emphasis float-start">
+            Please contact to Administrator.
+          </p>
+        </div>
+
+        <c-input-group class="mb-3">
+          <span cInputGroupText>
+            <svg [cIcon]="icons.cilMagnifyingGlass" size="xl" title="Lock"></svg>
+          </span>
+          <input cFormControl type="" placeholder="What are you looking for?" />
+          <button cButton>Search</button>
+        </c-input-group>
+      </c-col>
+      <c-col md="7">
+        <img cImg fluid src="/src/assets/images/403.png" alt="Not Authorized" />
+      </c-col>
+    </c-row>
+  </c-container>
+</div>

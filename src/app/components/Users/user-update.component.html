@@ -1,0 +1,91 @@
+  <c-card class="shadow-none border-0 mb-5 px-0">
+    <c-card-header
+      class="border-0 d-flex justify-content-between align-items-center bg-white"
+    >
+      <button cButton class="d-flex justify-content-center align-items-center" (click)="goBack()">
+        <svg [cIcon]="icons.cilChevronLeft" size="sm" class="me-1"></svg>
+        Quay lại
+      </button>
+      <c-card-title class="text-bold h5">Thêm người dùng mới</c-card-title>
+    </c-card-header>
+    <form cForm>
+      <c-card-body>
+        <c-row>
+          <c-col>
+            <c-card-title class="text-lg">Thêm người dùng mới</c-card-title>
+          </c-col>
+        </c-row>
+  
+        <c-row class="mt-3">
+          <c-col lg="12" xl="3" class="d-flex justify-content-center my-auto">
+            <c-avatar color="secondary" size="xl">CUI</c-avatar>
+          </c-col>
+  
+          <c-col lg="12" xl="9">
+            <c-row>
+              <c-col sm="12" md="6" class="mb-3">
+                <label class="mb-0 text-bold text-md" cLabel>Username</label>
+                <input
+                  class="custom-form-input"
+                  cFormControl
+                  type="text"
+                  disabled
+                />
+                <div cFormText>We'll never share your email with anyone else</div>
+              </c-col>
+  
+              <c-col sm="12" md="6" class="mb-3">
+                <label class="mb-0 text-bold text-md" cLabel>First Name</label>
+                <input class="custom-form-input" cFormControl type="text" />
+              </c-col>
+  
+              <c-col sm="12" md="6" class="mb-3">
+                <label class="mb-0 text-bold text-md" cLabel>Last Name</label>
+                <input class="custom-form-input" cFormControl type="text" />
+              </c-col>
+  
+              <c-col sm="12" md="6" class="mb-3">
+                <label class="mb-0 text-bold text-md" cLabel>Email</label>
+                <input class="custom-form-input" cFormControl type="email" />
+              </c-col>
+  
+              <c-col sm="12" md="6" class="mb-3">
+                <label class="mb-0 text-bold text-md" cLabel>Password</label>
+                <input class="custom-form-input" cFormControl type="password" />
+              </c-col>
+  
+              <!-- <c-col sm="12" md="6">
+                <c-form-check class="mb-3">
+                  <input
+                    class="custom-form-input"
+                    cFormCheckInput
+                    type="checkbox"
+                  />
+                  <label class="mb-0 text-bold text-md" cFormCheckLabel
+                    >Check me out</label
+                  >
+                </c-form-check>
+              </c-col> -->
+            </c-row>
+          </c-col>
+        </c-row>
+      </c-card-body>
+      <c-card-footer class="px-0 border-0 bg-white">
+        <c-row class="my-2">
+          <c-col class="d-flex justify-content-end">
+            <button
+              cButton
+              class="custom-form-btn mx-2 border"
+              color="bg-white"
+              (click)="goBack()"
+            >
+              Hủy
+            </button>
+            <button cButton class="custom-form-btn green-btn" type="submit">
+              Lưu
+            </button>
+          </c-col>
+        </c-row>
+      </c-card-footer>
+    </form>
+  </c-card>

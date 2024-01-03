@@ -1,0 +1,17 @@
+<div>
+  <!-- <app-aside-bar [currentStateVisible]="currentStateVisible"></app-aside-bar> -->
+  <c-sidebar [visible]="currentStateVisible" position="fixed">
+    <c-sidebar-brand>Sidebar Brand</c-sidebar-brand>
+    <c-sidebar-nav [navItems]="navItems" dropdownMode="close"></c-sidebar-nav>
+    <c-sidebar-toggler></c-sidebar-toggler>
+  </c-sidebar>   
+  <div class="wrapper d-flex flex-column flex-grow-1 min-vh-100">
+    <app-header-custom
+      (visibleSideBar)="receiveVisibleStatus($event)"
+    ></app-header-custom>    
+    <!-- <div class="body flex-grow-1 px-3"> -->
+    <div class="container-fluid">
+      <router-outlet></router-outlet>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,83 @@
+<!-- <p>login works!</p> -->
+<div
+  class="register-wrap min-vh-100 d-flex justify-content-center align-items-center"
+>
+  <c-container class="row d-flex justify-content-center align-items-center">
+    <c-card class="cardWrap col-md-6 mx-3">
+      <c-card-body>
+        <h3 cCardTitle class="text-bold">REGISTER</h3>
+        <h5 cCardSubtitle class="mb-2 text-medium-emphasis">
+          Đăng ký tài khoản nhé
+        </h5>
+        <form cForm>
+          <div class="mb-3">
+            <c-input-group class="mb-3">
+              <span cInputGroupText>
+                <svg [cIcon]="icons.cilUser" size="xl" title="User"></svg>
+              </span>
+              <input cFormControl placeholder="Username" />
+            </c-input-group>
+          </div>
+          <div class="mb-3">
+            <c-input-group class="mb-3">
+              <span cInputGroupText>
+                <svg
+                  [cIcon]="icons.cilEnvelopeOpen"
+                  size="xl"
+                  title="Email"
+                ></svg>
+              </span>
+              <input cFormControl placeholder="Email" type="email" />
+            </c-input-group>
+          </div>
+          <div class="mb-3">
+            <c-input-group class="mb-3">
+              <span cInputGroupText>
+                <svg [cIcon]="icons.cilLockLocked" size="xl" title="Lock"></svg>
+              </span>
+              <input cFormControl type="password" placeholder="Password" />
+            </c-input-group>
+          </div>
+          <div class="mb-3">
+            <c-input-group class="mb-3">
+              <span cInputGroupText>
+                <svg [cIcon]="icons.cilLockLocked" size="xl" title="Lock"></svg>
+              </span>
+              <input
+                cFormControl
+                type="password"
+                placeholder="Repeat Password"
+              />
+            </c-input-group>
+          </div>
+
+          <div class="row">
+            <div class="col-md-6 col-sm-12 mb-3">
+              <label class="mb-0 text-bold" for="inputName-1">First Name</label>
+              <input
+                cFormControl
+                type="name"
+                id="inputName-1"
+                placeholder="Repeat Password"
+              />
+            </div>
+            <div class="col-md-6 col-sm-12 mb-3">
+              <label class="mb-0 text-bold" for="inputPassword-2" for="inputName-2">Last Name</label>
+              <input
+                cFormControl
+                type="name"
+                id="inputName-2"
+                placeholder="Last Name"
+              />
+            </div>
+          </div>
+
+          <div class="d-flex justify-content-end">
+            <!-- <button cButton color="link">Quên mật khẩu?</button> -->
+            <button cButton color="success" type="submit">Đăng Ký</button>
+          </div>
+        </form>
+      </c-card-body>
+    </c-card>
+  </c-container>
+</div>

@@ -27,10 +27,12 @@
             "inlineStyleLanguage": "scss",
             "assets": [
               "src/favicon.ico",
-              "src/assets"
+              "src/assets",
+              "src/assets/images/404.png"
             ],
             "styles": [
-              "src/styles.scss"
+              "src/content/scss/styles.scss",
+              "node_modules/bootstrap/dist/css/bootstrap.min.css"              
             ],
             "scripts": []
           },
@@ -65,10 +67,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "quanproApp:build:production"
+              "buildTarget": "quanproApp:build:production"
             },
             "development": {
-              "browserTarget": "quanproApp:build:development"
+              "buildTarget": "quanproApp:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -76,7 +78,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "quanproApp:build"
+            "buildTarget": "quanproApp:build"
           }
         },
         "test": {
@@ -93,12 +95,16 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.scss"
+              "src/content/scss/styles.scss",
+              "node_modules/bootstrap/dist/css/bootstrap.min.css"
             ],
             "scripts": []
           }
         }
       }
     }
+  },
+  "cli": {
+    "analytics": "c8a1a6a3-e31a-4677-884b-aac898a53659"
   }
 }

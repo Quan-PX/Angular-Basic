@@ -1,0 +1,56 @@
+<!-- <mat-toolbar color="primary" class="position-sticky">
+  <button
+    mat-icon-button
+    (click)="handleToggleStatus()"
+  >
+    <svg [cIcon]="icons.cilList" size="xl" title="List Icon"></svg>
+  </button>
+  <span class="cursor-pointer">QuânPX</span>
+  <span class="spacer"></span>
+  <button
+    mat-icon-button
+    class="favorite-icon"
+    matTooltip="Thông báo"
+  >
+    <svg [cIcon]="icons.cilBell" size="xl" title="annouce"></svg>
+  </button>
+  <button mat-icon-button matTooltip="Tài khoản" class="">
+    <svg [cIcon]="icons.cilUser" size="xl"></svg>
+  </button>
+</mat-toolbar> -->
+<c-header>
+  <c-container fluid>
+    <c-header-nav class="d-flex align-items-center">
+      <cHeaderToggler cButton color="primary" variant="ghost" (click)="handleToggleStatus()">
+        <svg [cIcon]="icons.cilList" size="xl" title="List Icon"></svg>
+      </cHeaderToggler>
+      <c-nav-item>
+        <a [routerLink] cNavLink>Home</a>
+      </c-nav-item>
+      <c-nav-item>
+        <a cNavLink routerLink="/components/alert">Link</a>
+      </c-nav-item>
+      <c-nav-item>
+        <a cNavLink disabled routerLink="/components/alert">Disabled</a>
+      </c-nav-item>
+    </c-header-nav>
+    <c-header-nav class="d-flex align-items-center">
+      <c-nav-item>
+        <a [routerLink] cNavLink>Home</a>
+      </c-nav-item>
+      <c-nav-item class="mx-2">
+        <a [routerLink] cNavLink>
+          <svg [cIcon]="icons.cilBell" size="xl" title="annouce"></svg>
+        </a>
+      </c-nav-item>
+      <c-nav-item>
+        <a [routerLink] cNavLink >
+          <svg [cIcon]="icons.cilUser" size="xl"></svg>
+        </a>
+      </c-nav-item> 
+      <cHeaderToggler  cButton color="primary" variant="ghost" (click)="handleToggleStatus()">
+        <svg [cIcon]="icons.cilList" size="xl" title="List Icon"></svg>
+      </cHeaderToggler>
+    </c-header-nav>
+  </c-container>
+</c-header>
