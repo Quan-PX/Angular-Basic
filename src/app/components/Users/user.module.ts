@@ -1,5 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { CUSTOM_ELEMENTS_SCHEMA, NgModule } from '@angular/core';
+import { ReactiveFormsModule } from '@angular/forms';
+import { RouterLink } from '@angular/router';
 import {
   AvatarModule,
   ButtonModule,
@@ -28,7 +30,9 @@ import { UserComponent } from './user.component';
     AvatarModule,
     FormModule,
     SharedModule,
-    CommonModule
+    CommonModule,
+    RouterLink,
+    ReactiveFormsModule
   ],
   declarations: [UserComponent, UserUpdateComponent, UserDetailComponent],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],

@@ -21,7 +21,12 @@
 <c-header>
   <c-container fluid>
     <c-header-nav class="d-flex align-items-center">
-      <cHeaderToggler cButton color="primary" variant="ghost" (click)="handleToggleStatus()">
+      <cHeaderToggler
+        cButton
+        color="primary"
+        variant="ghost"
+        (click)="handleToggleStatus()"
+      >
         <svg [cIcon]="icons.cilList" size="xl" title="List Icon"></svg>
       </cHeaderToggler>
       <c-nav-item>
@@ -44,13 +49,37 @@
         </a>
       </c-nav-item>
       <c-nav-item>
-        <a [routerLink] cNavLink >
+        <a [routerLink] cNavLink>
           <svg [cIcon]="icons.cilUser" size="xl"></svg>
         </a>
-      </c-nav-item> 
-      <cHeaderToggler  cButton color="primary" variant="ghost" (click)="handleToggleStatus()">
-        <svg [cIcon]="icons.cilList" size="xl" title="List Icon"></svg>
+      </c-nav-item>
+      <cHeaderToggler
+        cButton
+        color="primary"
+        variant="ghost"
+        (click)="toggleModalLogout()"
+      >
+        <svg [cIcon]="icons.cilAccountLogout" size="xl" title="List Icon"></svg>
       </cHeaderToggler>
+
+      <c-modal
+        [visible]="visibleModalLogout"
+        (visibleChange)="handleChangeModal($event)"
+      >
+        <c-modal-header>
+          <h5 cModalTitle>Đăng xuất tài khoản?</h5>
+          <button (click)="toggleModalLogout()" cButtonClose></button>
+        </c-modal-header>
+        <c-modal-body>Bạn có muốn thực sự đăng xuất tài khoản?</c-modal-body>
+        <c-modal-footer>
+          <button (click)="toggleModalLogout()" cButton color="secondary">
+            Close
+          </button>
+          <button cButton color="danger" (click)="handleLogoutAccount()">
+            Đăng xuất
+          </button>
+        </c-modal-footer>
+      </c-modal>
     </c-header-nav>
   </c-container>
 </c-header>

@@ -1,8 +1,36 @@
-import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
+import { Injectable, NgModule } from '@angular/core';
+import {
+  ActivatedRouteSnapshot,
+  ResolveFn,
+  RouterModule,
+  RouterStateSnapshot,
+  Routes
+} from '@angular/router';
+import { UserService } from 'src/app/services/user.service';
 import { UserDetailComponent } from './user-detail.component';
 import { UserUpdateComponent } from './user-update.component';
 import { UserComponent } from './user.component';
+
+// @Injectable({providedIn: 'root'})
+// export class UserResolve implements Resolve<any> {
+//   resolve(route: ActivatedRouteSnapshot, state: RouterStateSnapshot) {
+//     throw new Error('Method not implemented.');
+//   }
+
+// }
+
+@Injectable({providedIn: 'root'})
+export class UserResolveService {  
+  constructor(private userService: UserService){}
+  
+}
+
+export const userResolve: ResolveFn<any> = (
+  route: ActivatedRouteSnapshot,
+  state: RouterStateSnapshot
+) => {
+  return 
+};
 
 const routes: Routes = [
   {
@@ -56,10 +84,6 @@ const routes: Routes = [
       // }
     ],
   },
-  // {
-  //     path: '/update',
-  //     // component: User
-  // }
 ];
 
 @NgModule({

@@ -6,26 +6,74 @@
     <c-card-body>
       <h3 cCardTitle>LOGIN</h3>
       <h4 cCardSubtitle class="mb-2 text-medium-emphasis">Đăng nhập nhé!!!</h4>
-      <p cCardText>
-        Sản phẩm của Phạm Xuân Quân. Có lỗi là chuyện bình thường
-      </p>
+      <p cCardText>Sản phẩm của Phạm Xuân Quân. Có lỗi là chuyện bình thường</p>
 
-      <form cForm>
-        <div class="mb-3">
+      <form
+        cForm
+        [formGroup]="loginForm"
+        (submit)="submitFormLogin()"
+        ngNativeValidate
+      >
+        <div class="mb-4 position-ralative">
           <c-input-group class="mb-3">
             <span cInputGroupText>
               <svg [cIcon]="icons.cilUser" size="xl" title="User"></svg>
             </span>
-            <input cFormControl placeholder="Username" />
+            <input
+              cFormControl
+              placeholder="Username"
+              formControlName="username"
+              required
+              [class.is-invalid]="
+                username?.invalid && (username?.dirty || username?.touched)
+              "
+            />
+            <!-- @if (username?.invalid && (username?.dirty || username?.touched)) { -->
+            <!-- @if (username?.errors) {  [valid]="!username?.touched || !username?.errors || username?.dirty"     -->
+            @if(username?.errors?.['required']){
+            <c-form-feedback [valid]="false" tooltip
+              >Tài khoản không được để trống!</c-form-feedback
+            >
+            } @if(username?.errors?.['minlength'] ||
+            username?.errors?.['maxlength']){
+            <c-form-feedback [valid]="false" tooltip
+              >tài khoản phải dài ít nhất 4 ký tự và nhiều nhất 20 ký
+              tự</c-form-feedback
+            >
+            }
+            <!-- } -->
           </c-input-group>
         </div>
-        <div class="mb-3">
+        <div class="mb-4 position-ralative">
           <c-input-group class="mb-3">
             <span cInputGroupText>
               <svg [cIcon]="icons.cilLockLocked" size="xl" title="Lock"></svg>
             </span>
-            <input cFormControl type="password" placeholder="Password" />
+            <input
+              cFormControl
+              type="password"
+              placeholder="Password"
+              formControlName="password"
+              required
+              [class.is-invalid]="
+                password?.invalid && (password?.dirty || password?.touched)
+              "
+            />
+            <c-form-feedback [valid]="false" tooltip
+              >Mật khẩu không được để trống!</c-form-feedback
+            >
           </c-input-group>
+        </div>
+        <div class="mb-4 d-flex justify-content-end">
+          <c-form-check sizing="xl" switch>
+            <input
+              cFormCheckInput
+              checked
+              type="checkbox"
+              formControlName="rememberMe"
+            />
+            <label cFormCheckLabel class="text-md">Remember Me?</label>
+          </c-form-check>
         </div>
         <!-- <c-form-check class="mb-3">
           <input cFormCheckInput id="checkMeOut-1" type="checkbox" />
@@ -38,9 +86,10 @@
         <div class="d-flex justify-content-end mt-3">
           <button
             cButton
+            routerLink="/register"
             class="custom-btn-register"
             cTooltip="Click here!!!
-            Nếu bạn không có tài khoản thì đăng ký đi!!!"
+            Nếu bạn không có tài khoản thì đăng ký!!!"
             cTooltipPlacement="bottom"
             variant="ghost"
           >

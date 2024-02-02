@@ -23,31 +23,44 @@
             class=""
             #smartTable="cSmartTable"
             [columns]="columns"
+            clickableRows="true"
             header
             [itemsPerPage]="10"
-            [items]="usersData"
+            [items]="users"
             noItemsLabel="Không có bản ghi nào được hiển thị cả"
             pagination
             [tableProps]="{ hover: true, striped: true, responsive: true }"
             [tableHeadProps]="{ color: 'info' }"
           >
-            <ng-template cTemplateId="tableData" let-columnName="columnName" let-item="item" let-tdContent="tdContent">
-              <!-- <td>
-                <p>{{usersData}}</p>
-              </td> -->
-              <td >
+            <ng-template
+              cTemplateId="tableData"
+              let-columnName="columnName"
+              let-item="item"
+              let-tdContent="tdContent"
+            >
+              <td>
                 <ng-container [ngSwitch]="columnName">
-                  <ng-container *ngSwitchCase="'name'">
-                    <p>{{(item[columnName])}}</p>                  
+                  <ng-container *ngSwitchCase="'username'">
+                    <p class="text-bold">{{ item[columnName] }}</p>
                   </ng-container>
-                  <ng-container *ngSwitchCase="'handle'">
-                    <button cButton color="success">click me!!</button>                  
+                  <ng-container *ngSwitchCase="'registered'">
+                    <p>{{ item[columnName] }}</p>
+                  </ng-container>
+                  <ng-container *ngSwitchCase="'email'">
+                    <p>{{ item[columnName] }}</p>
+                  </ng-container>
+                  <ng-container *ngSwitchCase="'firstName'">
+                    <p>{{ item[columnName] }}</p>
+                  </ng-container>
+                  <ng-container *ngSwitchCase="'lastName'">
+                    <p>{{ item[columnName] }}</p>
+                  </ng-container>
+                  <ng-container *ngSwitchCase="''">
+                    <button cButton color="success" routerLink="{{item.id}}/update">click me!!</button>
                   </ng-container>                  
                 </ng-container>
               </td>
-            </ng-template>  
-            <!-- <ng-container *ngSwitchDefault>
-            </ng-container>           -->
+            </ng-template>
           </c-smart-table>
         </c-col>
       </c-row>

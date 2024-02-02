@@ -9,16 +9,43 @@
         <h5 cCardSubtitle class="mb-2 text-medium-emphasis">
           Đăng ký tài khoản nhé
         </h5>
-        <form cForm>
-          <div class="mb-3">
+        <form
+          cForm
+          [formGroup]="registerForm"
+          (submit)="submitRegisterForm()"
+          ngNativeValidate
+        >
+          <div class="mb-3 position-ralative">
             <c-input-group class="mb-3">
               <span cInputGroupText>
                 <svg [cIcon]="icons.cilUser" size="xl" title="User"></svg>
               </span>
-              <input cFormControl placeholder="Username" />
+              <input
+                cFormControl
+                class="form-control"
+                placeholder="Username"
+                name="username"
+                formControlName="username"
+                [class.is-invalid]="
+                  username?.invalid && (username?.dirty || username?.touched)
+                "
+                required
+              />
+              @if( username?.errors?.['required'] ){
+              <c-form-feedback [valid]="false" tooltip
+                >Tài khoản không được để trống!</c-form-feedback
+              >
+              } @if(username?.errors?.['minlength'] ||
+              username?.errors?.['maxlength']){
+              <c-form-feedback [valid]="false" tooltip
+                >Tài khoản phải dài ít nhất là 4 ký tự và nhiều nhất là 20 ký
+                tự</c-form-feedback
+              >
+              }
+              <!-- [formControl]="registerForm.controls.username" -->
             </c-input-group>
           </div>
-          <div class="mb-3">
+          <div class="mb-3 position-ralative">
             <c-input-group class="mb-3">
               <span cInputGroupText>
                 <svg
@@ -27,18 +54,56 @@
                   title="Email"
                 ></svg>
               </span>
-              <input cFormControl placeholder="Email" type="email" />
+              <input
+                cFormControl
+                placeholder="Email"
+                type="email"
+                class="form-control"
+                id="email"
+                name="email"
+                formControlName="email"
+                required
+                [class.is-invalid]="
+                  email?.invalid && (email?.dirty || email?.touched)
+                "
+              />
+              @if( email?.errors?.['required'] ){
+              <c-form-feedback [valid]="false" tooltip
+                >Email không được để trống!</c-form-feedback
+              >
+              }
             </c-input-group>
           </div>
-          <div class="mb-3">
+          <div class="mb-3 position-ralative">
             <c-input-group class="mb-3">
               <span cInputGroupText>
                 <svg [cIcon]="icons.cilLockLocked" size="xl" title="Lock"></svg>
               </span>
-              <input cFormControl type="password" placeholder="Password" />
+              <input
+                cFormControl
+                type="password"
+                placeholder="Password"
+                class="form-control"
+                required
+                name="password"
+                formControlName="password"
+                [class.is-invalid]="
+                  password?.invalid && (password?.dirty || password?.touched)
+                "
+              />
+              @if( password?.errors?.['required'] ){
+              <c-form-feedback [valid]="false" tooltip
+                >Mật khẩu không được để trống!</c-form-feedback
+              >
+              } @if( password?.errors?.['passwordStrength'] ){
+              <c-form-feedback [valid]="false" tooltip
+                >Mật khẩu phải bao gồm các ký tự viết hoa, viết thường và số
+                characters.</c-form-feedback
+              >
+              }
             </c-input-group>
           </div>
-          <div class="mb-3">
+          <div class="mb-3 position-ralative">
             <c-input-group class="mb-3">
               <span cInputGroupText>
                 <svg [cIcon]="icons.cilLockLocked" size="xl" title="Lock"></svg>
@@ -47,29 +112,66 @@
                 cFormControl
                 type="password"
                 placeholder="Repeat Password"
+                id="confirmPassword"
+                class="form-control"
+                name="confirmPassword"
+                formControlName="confirmPassword"
+                [class.is-invalid]="
+                  confirmPassword?.invalid &&
+                  (confirmPassword?.dirty || confirmPassword?.touched)
+                "
+                required
               />
+              @if( confirmPassword?.errors?.['required'] ){
+              <c-form-feedback [valid]="false" tooltip
+                >Mật khẩu không được để trống!</c-form-feedback
+              >
+              } @if( confirmPassword?.errors?.['confirmPassword'] ){
+              <c-form-feedback [valid]="false" tooltip
+                >Mật khẩu phải khớp với mật khẩu đã nhập</c-form-feedback
+              >
+              }
             </c-input-group>
           </div>
 
-          <div class="row">
+          <div class="row position-ralative">
             <div class="col-md-6 col-sm-12 mb-3">
               <label class="mb-0 text-bold" for="inputName-1">First Name</label>
               <input
                 cFormControl
                 type="name"
                 id="inputName-1"
-                placeholder="Repeat Password"
+                placeholder="First Name"
+                class="form-control"
+                name="firstName"
+                formControlName="firstName"
+                required
               />
             </div>
             <div class="col-md-6 col-sm-12 mb-3">
-              <label class="mb-0 text-bold" for="inputPassword-2" for="inputName-2">Last Name</label>
+              <label
+                class="mb-0 text-bold"
+                for="inputPassword-2"
+                for="inputName-2"
+                >Last Name</label
+              >
               <input
                 cFormControl
                 type="name"
                 id="inputName-2"
                 placeholder="Last Name"
+                class="form-control"
+                name="lastName"
+                formControlName="lastName"
+                required
               />
             </div>
+            @if( firstName?.errors?.['required'] ||
+            lastName?.errors?.['required']){
+            <c-form-feedback [valid]="true" tooltip
+              >Họ và Tên không được để trống!</c-form-feedback
+            >
+            }
           </div>
 
           <div class="d-flex justify-content-end">
