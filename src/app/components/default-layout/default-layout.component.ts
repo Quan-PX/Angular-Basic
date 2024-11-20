@@ -10,7 +10,7 @@ import { navItems } from 'src/app/shared/ISidebar';
   providers: [StatusService]
 })
 export class DefaultLayoutComponent {
-  currentStateVisible: boolean = true  
+  currentStateVisible: boolean = false  
   navItems: INavData[] = navItems;
 
   constructor(private statusService: StatusService){}

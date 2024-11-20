@@ -37,7 +37,7 @@ import { AuthServerProvider } from 'src/app/services/auth/auth-jwt.service';
 export class AppHeaderComponent {
   icons = { cilList, cilUser, cilHome, cilBell, cilAccountLogout };
   @Output() visibleSideBar = new EventEmitter<boolean>();
-  stateVisibale: boolean = true;
+  stateVisibale: boolean = false;
 
   visibleModalLogout = false
 

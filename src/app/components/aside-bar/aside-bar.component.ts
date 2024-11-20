@@ -22,6 +22,6 @@ import { navItems } from 'src/app/shared/ISidebar';
   ]
 })
 export class AsideBarComponent {
-  @Input() currentStateVisible: boolean = true; 
+  @Input() currentStateVisible: boolean = false; 
   navItems: INavData[] = navItems;
 }
